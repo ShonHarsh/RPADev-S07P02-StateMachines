@@ -1,5 +1,5 @@
 ![](https://shonharsh.github.io/curriculum-vitae/images/banner-uipath.png)
-# //Project Pending - I am still updating all of the projects for the RPA Developer Foundation.  In doing so I am updating the existing C# Windows Legacy project while also rewriting them in both C# Windows and VB Windows.  I complete at least one project a day.
+
 # S07P02 State Machines
 
 This project is my solution in **C#** to the **State Machines** practice found in section 07 practice 02 of the UiPath - RPA Developer Foundation course.
@@ -38,7 +38,48 @@ If they want to get the change, a message box is displayed with the value of the
 ### Sample Output
 
 ```
-
+05/13/2024 18:44:06 => [Info] RPADev-S07P02-StateMachines execution started
+05/13/2024 18:44:07 => [Info] RPADev-S07P02-StateMachines.Main.Begin;
+05/13/2024 18:44:07 => [Info] RPADev-S07P02-StateMachines.Read_WorkbookToTable.OperationCompleted;
+05/13/2024 18:44:07 => [Info] RPADev-S07P02-StateMachines.Create_VendingItems.OperationCompleted;
+05/13/2024 18:44:10 => [Info] RPADev-S07P02-StateMachines.Dialog_CreditAccount.Credit; Account Credit: 100
+05/13/2024 18:44:16 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: 7up, Cost: 2
+Credit: 98
+05/13/2024 18:44:21 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Barq's, Cost: 2
+Credit: 96
+05/13/2024 18:44:26 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Cheerwine, Cost: 3
+Credit: 93
+05/13/2024 18:44:30 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Coca-Cola, Cost: 2
+Credit: 91
+05/13/2024 18:44:34 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Dr. Pepper, Cost: 2
+Credit: 89
+05/13/2024 18:44:42 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Java Monster, Cost: 4
+Credit: 85
+05/13/2024 18:44:46 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Vernors Ginger Ale, Cost: 2
+Credit: 83
+05/13/2024 18:44:49 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Water, Cost: 1
+Credit: 82
+05/13/2024 18:44:50 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.CashOut;
+Returning funds in pennies: 82
+Ordered Items:
+7up
+Barq's
+Cheerwine
+Coca-Cola
+Dr. Pepper
+Java Monster
+Vernors Ginger Ale
+Water
+05/13/2024 18:44:50 => [Info] RPADev-S07P02-StateMachines.Main.End;
+05/13/2024 18:44:50 => [Info] RPADev-S07P02-StateMachines execution ended in: 00:00:43
 ```
 
 ### Architecture Requirements
