@@ -3,7 +3,7 @@
     <x:Property Name="out_CreditAmount" Type="OutArgument(x:Double)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>644,2230</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1109,2230</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -230,7 +230,7 @@
             <ui:LogMessage DisplayName="Log Message RPADev-S07P02-StateMachines.Dialog_CreditAccount.Fine;" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35" xml:space="preserve">"RPADev-S07P02-StateMachines.Dialog_CreditAccount.Fine;" + Environment.NewLine + 
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39" xml:space="preserve">"RPADev-S07P02-StateMachines.Dialog_CreditAccount.Fine;" + Environment.NewLine + 
 "The input is invalid.  Assigning credit to $5.  A fine of $2 will be charged to this account.  This fine will be sent within the next two weeks.  Failure to comply to this fine within a month of billing may result in compounding interest and an official demerit."</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
