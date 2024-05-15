@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="in_ItemsAndCosts" Type="InArgument(scg:Dictionary(x:String, x:Double))" />
     <x:Property Name="io_CreditAmount" Type="InOutArgument(x:Double)" />
-    <x:Property Name="io_OrderedItemsTotal" Type="InOutArgument(scg:List(x:String))" />
+    <x:Property Name="io_OrderedItems" Type="InOutArgument(scg:List(x:String))" />
   </x:Members>
   <this:Dialog_DispenseItems.in_ItemsAndCosts>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Double)">
@@ -10,7 +10,7 @@
     </InArgument>
   </this:Dialog_DispenseItems.in_ItemsAndCosts>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1080,3396</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1109,3569</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -101,7 +101,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Dialog_DispenseItems" sap:VirtualizedContainerService.HintSize="654,3331" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Dialog_DispenseItems" sap:VirtualizedContainerService.HintSize="654,3504" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="dialogDispenseTitle">
         <Variable.Default>
@@ -135,10 +135,10 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message RPADev-S05P04-OutputActions.Dialog_DispenseItems.Begin;" sap:VirtualizedContainerService.HintSize="592,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
+    <ui:LogMessage DisplayName="Log Message RPADev-S07P02-StateMachines.Dialog_DispenseItems.Begin;" sap:VirtualizedContainerService.HintSize="592,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">"RPADev-S05P04-OutputActions.Dialog_DispenseItems.Begin;"</CSharpValue>
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">"RPADev-S07P02-StateMachines.Dialog_DispenseItems.Begin;"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
@@ -192,11 +192,11 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:Double)" DisplayName="For Each Item $ Cost" sap:VirtualizedContainerService.HintSize="530,377" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
+      <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:Double)" DisplayName="For Each Item Cost" sap:VirtualizedContainerService.HintSize="530,377" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, x:Double)">
             <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="scg:KeyValuePair(x:String, x:Double)" Name="items" />
+              <DelegateInArgument x:TypeArguments="scg:KeyValuePair(x:String, x:Double)" Name="item" />
             </ActivityAction.Argument>
             <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,190" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <sap:WorkflowViewStateService.ViewState>
@@ -212,7 +212,7 @@
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">items.Key + ", " + items.Value</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">item.Key + ", " + item.Value</CSharpValue>
                   </InArgument>
                 </Assign.Value>
               </Assign>
@@ -231,7 +231,7 @@
         </ui:ForEach.Values>
       </ui:ForEach>
     </Sequence>
-    <Sequence DisplayName="Sequence Operation" sap:VirtualizedContainerService.HintSize="592,1275" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Sequence Operation" sap:VirtualizedContainerService.HintSize="592,2057" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:String[]" Name="arrayItemResult">
           <Variable.Default>
@@ -314,7 +314,7 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <ui:MultipleAssign DisplayName="Multiple Assign Item Selections" sap:VirtualizedContainerService.HintSize="530,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+      <ui:MultipleAssign DisplayName="Multiple Assign Item Selection Data Points" sap:VirtualizedContainerService.HintSize="530,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -344,38 +344,31 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List Item Selection" sap:VirtualizedContainerService.HintSize="530,156" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1">
-        <uasa:AppendItemToList.ItemToAppend>
-          <InArgument x:TypeArguments="x:String">
-            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">itemSelection</CSharpValue>
-          </InArgument>
-        </uasa:AppendItemToList.ItemToAppend>
-        <uasa:AppendItemToList.List>
-          <InArgument x:TypeArguments="scg:IList(x:String)">
-            <CSharpValue x:TypeArguments="scg:IList(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">io_OrderedItemsTotal</CSharpValue>
-          </InArgument>
-        </uasa:AppendItemToList.List>
-      </uasa:AppendItemToList>
-    </Sequence>
-    <Sequence DisplayName="Sequence Result" sap:VirtualizedContainerService.HintSize="592,893" sap2010:WorkflowViewState.IdRef="Sequence_11">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <If DisplayName="If Validate Selection Versus Credit" sap:VirtualizedContainerService.HintSize="530,773" sap2010:WorkflowViewState.IdRef="If_1">
+      <If DisplayName="If Validate Selection Versus Credit" sap:VirtualizedContainerService.HintSize="530,938" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Condition>
           <InArgument x:TypeArguments="x:Boolean">
             <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">itemCost &lt;= io_CreditAmount</CSharpValue>
           </InArgument>
         </If.Condition>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,363" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,528" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List Item Selection" sap:VirtualizedContainerService.HintSize="434,165" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1">
+              <uasa:AppendItemToList.ItemToAppend>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">itemSelection</CSharpValue>
+                </InArgument>
+              </uasa:AppendItemToList.ItemToAppend>
+              <uasa:AppendItemToList.List>
+                <InArgument x:TypeArguments="scg:IList(x:String)">
+                  <CSharpValue x:TypeArguments="scg:IList(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">io_OrderedItems</CSharpValue>
+                </InArgument>
+              </uasa:AppendItemToList.List>
+            </uasa:AppendItemToList>
             <Assign DisplayName="Assign Update Credit" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_4">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Double">
@@ -388,10 +381,10 @@
                 </InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted;" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
+            <ui:LogMessage DisplayName="Log Message RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted;" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44" xml:space="preserve">"RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete." + Environment.NewLine + 
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45" xml:space="preserve">"RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted; Transaction Complete." + Environment.NewLine + 
 "Item: " + itemSelection + ", Cost: " + itemCost.ToString() + Environment.NewLine + 
 "Credit: " + io_CreditAmount</CSharpValue>
                 </InArgument>
@@ -406,10 +399,10 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message RPADev-S05P04-OutputActions.Dialog_DispenseItems.InsufficientFunds;" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info">
+            <ui:LogMessage DisplayName="Log Message RPADev-S07P02-StateMachines.Dialog_DispenseItems.InsufficientFunds;" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22" xml:space="preserve">"RPADev-S05P04-OutputActions.Dialog_DispenseItems.InsufficientFunds; Insufficient Funds." + Environment.NewLine + 
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46" xml:space="preserve">"RPADev-S07P02-StateMachines.Dialog_DispenseItems.InsufficientFunds; Insufficient Funds." + Environment.NewLine + 
 "Credit: " + io_CreditAmount</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
@@ -418,10 +411,24 @@
         </If.Else>
       </If>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message RPADev-S05P04-OutputActions.Dialog_DispenseItems.End;" sap:VirtualizedContainerService.HintSize="592,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace">
+    <Sequence DisplayName="Sequence Result" sap:VirtualizedContainerService.HintSize="592,284" sap2010:WorkflowViewState.IdRef="Sequence_11">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message RPADev-S07P02-StateMachines.Dialog_DispenseItems.OperationCompleted;" sap:VirtualizedContainerService.HintSize="388,164" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace">
+        <ui:LogMessage.Message>
+          <InArgument x:TypeArguments="x:Object">
+            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">"RPADev-S07P02-StateMachines.Dialog_DispenseItems.OperationCompleted;"</CSharpValue>
+          </InArgument>
+        </ui:LogMessage.Message>
+      </ui:LogMessage>
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message RPADev-S07P02-StateMachines.Dialog_DispenseItems.End;" sap:VirtualizedContainerService.HintSize="592,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">"RPADev-S05P04-OutputActions.Dialog_DispenseItems.End;"</CSharpValue>
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">"RPADev-S07P02-StateMachines.Dialog_DispenseItems.End;"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
