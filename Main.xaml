@@ -1,19 +1,24 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1080,2133" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1109,2479" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
-      <x:String>System</x:String>
       <x:String>System.Collections</x:String>
       <x:String>System.Collections.Generic</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
       <x:String>System.Data</x:String>
-      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Linq</x:String>
       <x:String>System.Runtime.Serialization</x:String>
-      <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
-      <x:String>System.ComponentModel</x:String>
-      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Reflection</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -75,9 +80,9 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="758,2068" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="840,2414" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_data">
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_DataTable">
         <Variable.Default>
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">new DataTable()</CSharpValue>
         </Variable.Default>
@@ -87,7 +92,7 @@
           <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Double)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">new Dictionary&lt;string, double&gt;()</CSharpValue>
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="scg:List(x:String)" Name="orderedItemsTotal">
+      <Variable x:TypeArguments="scg:List(x:String)" Name="orderedItems">
         <Variable.Default>
           <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">new List&lt;string&gt;{}</CSharpValue>
         </Variable.Default>
@@ -98,7 +103,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message RPADev-S07P02-StateMachines.Main.Begin;" sap:VirtualizedContainerService.HintSize="696,173" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+    <ui:LogMessage DisplayName="Log Message RPADev-S07P02-StateMachines.Main.Begin;" sap:VirtualizedContainerService.HintSize="778,173" sap2010:WorkflowViewState.IdRef="LogMessage_1">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -110,7 +115,7 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <Sequence sap2010:Annotation.AnnotationText="The Vending Machine&#xA;&#xA;Create a workflow that simulates a vending machine. The functionality should be the following:&#xA;&#xA;The user is asked to choose the initial credit ($5, $10, $20) and to choose if he/she wants to proceed or if they changed their mind and want to get the change;&#xA;If they want to continue: They are asked what drink they want: Coffee ($3) or Tea ($2).&#xA;Next, the vending machine should check if the user has enough credit for selected drink. If Yes, display a success message and subtract the price of the drink from the total amount.&#xA;&#xA;The user is then asked if he/she wants to buy another drink or to get the change.&#xA;&#xA;If they want to get the change, a message box is displayed with the value of the change to be given to the customer.&#xA;" DisplayName="Sequence Initialization" sap:VirtualizedContainerService.HintSize="696,863" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence sap2010:Annotation.AnnotationText="The Vending Machine&#xA;&#xA;Create a workflow that simulates a vending machine. The functionality should be the following:&#xA;&#xA;The user is asked to choose the initial credit ($5, $10, $20) and to choose if he/she wants to proceed or if they changed their mind and want to get the change;&#xA;If they want to continue: They are asked what drink they want: Coffee ($3) or Tea ($2).&#xA;Next, the vending machine should check if the user has enough credit for selected drink. If Yes, display a success message and subtract the price of the drink from the total amount.&#xA;&#xA;The user is then asked if he/she wants to buy another drink or to get the change.&#xA;&#xA;If they want to get the change, a message box is displayed with the value of the change to be given to the customer.&#xA;" DisplayName="Sequence Initialization" sap:VirtualizedContainerService.HintSize="778,925" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="filelPath">
           <Variable.Default>
@@ -130,9 +135,9 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:MultipleAssign DisplayName="Multiple Assign Initialization" sap:VirtualizedContainerService.HintSize="479,210" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+      <ui:MultipleAssign DisplayName="Multiple Assign Initialization" sap:VirtualizedContainerService.HintSize="479,272" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
         <ui:MultipleAssign.AssignOperations>
-          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
               <ui:AssignOperation.To>
                 <OutArgument x:TypeArguments="x:String">
@@ -163,6 +168,30 @@
                 <InArgument x:TypeArguments="x:Boolean">True</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Double)">
+                  <CSharpReference x:TypeArguments="scg:Dictionary(x:String, x:Double)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_44">itemsAndCosts</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Double)">
+                  <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Double)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">new Dictionary&lt;string, double&gt;()</CSharpValue>
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="scg:List(x:String)">
+                  <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_43">orderedItems</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="scg:List(x:String)">
+                  <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">new List&lt;String&gt;()</CSharpValue>
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
@@ -171,34 +200,34 @@
           <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">filelPath</CSharpValue>
           </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_Worksheet">
-            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">fileWorksheetName</CSharpValue>
-          </InArgument>
           <InArgument x:TypeArguments="x:Boolean" x:Key="in_WorksheetHasHeaders">
             <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">fileWorksheetHasHeaders</CSharpValue>
           </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_WorksheetRange">
             <Literal x:TypeArguments="x:String" Value="" />
           </InArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Dt_Data">
-            <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">dt_data</CSharpReference>
+          <InArgument x:TypeArguments="x:String" x:Key="in_WorksheetName">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">fileWorksheetName</CSharpValue>
+          </InArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Dt_DataTable">
+            <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_41">dt_DataTable</CSharpReference>
           </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Methods\\Create_VendingItems.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Methods\\Create_VendingItems.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Dt_Data">
-            <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">dt_data</CSharpValue>
-          </InArgument>
           <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Double)" x:Key="out_ItemsAndCosts">
             <CSharpReference x:TypeArguments="scg:Dictionary(x:String, x:Double)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">itemsAndCosts</CSharpReference>
           </OutArgument>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Dt_DataTable">
+            <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">dt_DataTable</CSharpValue>
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="Sequence Operation" sap:VirtualizedContainerService.HintSize="696,780" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sequence Operation" sap:VirtualizedContainerService.HintSize="778,780" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
-        <Variable x:TypeArguments="x:Boolean" Default="False" Name="orderItems" />
+        <Variable x:TypeArguments="x:Boolean" Default="False" Name="shouldOrderItems" />
         <Variable x:TypeArguments="x:Double" Default="0" Name="creditAmount" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
@@ -206,18 +235,18 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <StateMachine InitialState="{x:Reference __ReferenceID2}" DisplayName="State Machine Vending Machine" sap:VirtualizedContainerService.HintSize="634,660" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+      <StateMachine InitialState="{x:Reference __ReferenceID1}" DisplayName="State Machine Vending Machine" sap:VirtualizedContainerService.HintSize="716,660" sap2010:WorkflowViewState.IdRef="StateMachine_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
             <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
-            <x:Double x:Key="StateContainerWidth">600</x:Double>
+            <x:Double x:Key="StateContainerWidth">681.5</x:Double>
             <x:Double x:Key="StateContainerHeight">600</x:Double>
-            <av:PointCollection x:Key="ConnectorLocation">303,77.5 303,107.5 300,107.5 300,127.5</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">330,28.750000000000004 370,28.750000000000004 370,119</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <State x:Name="__ReferenceID2" DisplayName="State Credit" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_2">
+        <State x:Name="__ReferenceID1" DisplayName="State Credit" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_2">
           <State.Entry>
             <Sequence DisplayName="Sequence Credit" sap:VirtualizedContainerService.HintSize="416,428" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
@@ -225,7 +254,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Credit Account" DisplayName="Dialog_CreditAccount.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Methods\\Dialog_CreditAccount.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Credit Account" DisplayName="Dialog_CreditAccount.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Dialog\\Dialog_CreditAccount.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <OutArgument x:TypeArguments="x:Double" x:Key="out_CreditAmount">
                     <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">creditAmount</CSharpReference>
@@ -237,10 +266,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Order Items" DisplayName="Dialog_OrderItems.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,167" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Methods\\Dialog_OrderItems.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Validate Credit" DisplayName="Methods\\Validate_CreditAmount.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,167" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Methods\\Validate_CreditAmount.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_OrderItems">
-                    <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">orderItems</CSharpReference>
+                  <InArgument x:TypeArguments="x:Double" x:Key="in_CreditAmount">
+                    <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">creditAmount</CSharpValue>
+                  </InArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsValidCredit">
+                    <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_45">isValidCredit</CSharpReference>
                   </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
@@ -253,150 +285,208 @@
           </State.Entry>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">233,127.5</av:Point>
+              <av:Point x:Key="ShapeLocation">303,119</av:Point>
               <av:Size x:Key="ShapeSize">134,62</av:Size>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <State.Transitions>
-            <Transition DisplayName="Credit To Order Items" sap:VirtualizedContainerService.HintSize="450,488" sap2010:WorkflowViewState.IdRef="Transition_1">
+            <Transition DisplayName="Has Credit True" sap2010:WorkflowViewState.IdRef="Transition_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:PointCollection x:Key="ConnectorLocation">233,155.4 103.30000000000001,155.4 103.30000000000001,229</av:PointCollection>
-                  <x:Int32 x:Key="SrcConnectionPointIndex">33</x:Int32>
-                  <x:Int32 x:Key="DestConnectionPointIndex">34</x:Int32>
+                  <av:PointCollection x:Key="ConnectorLocation">370,181 370,256</av:PointCollection>
+                  <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                  <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Transition.Condition>
-                <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">orderItems == true</CSharpValue>
+                <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">isValidCredit == true</CSharpValue>
               </Transition.Condition>
               <Transition.To>
-                <State x:Name="__ReferenceID0" DisplayName="State Dispense" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_3">
+                <State x:Name="__ReferenceID0" DisplayName="State Order Items" sap:VirtualizedContainerService.HintSize="157,68" sap2010:WorkflowViewState.IdRef="State_7">
                   <State.Entry>
-                    <Sequence DisplayName="Sequence Dispense" sap:VirtualizedContainerService.HintSize="592,975" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Order Items" DisplayName="Dialog\\Dialog_OrderItems.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Dialog\\Dialog_OrderItems.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_OrderItems">
+                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_46">shouldOrderItems</CSharpReference>
+                        </OutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Methods\\Dialog_DispenseItems.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="530,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Methods\\Dialog_DispenseItems.xaml">
-                        <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Double)" x:Key="in_ItemsAndCosts">
-                            <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Double)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">itemsAndCosts</CSharpValue>
-                          </InArgument>
-                          <InOutArgument x:TypeArguments="x:Double" x:Key="io_CreditAmount">
-                            <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_35">creditAmount</CSharpReference>
-                          </InOutArgument>
-                          <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_OrderedItemsTotal">
-                            <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_39">orderedItemsTotal</CSharpReference>
-                          </InOutArgument>
-                        </ui:InvokeWorkflowFile.Arguments>
-                      </ui:InvokeWorkflowFile>
-                      <If DisplayName="If Validate Credit" sap:VirtualizedContainerService.HintSize="530,745" sap2010:WorkflowViewState.IdRef="If_2">
-                        <If.Condition>
-                          <InArgument x:TypeArguments="x:Boolean">
-                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">creditAmount &gt;= 1</CSharpValue>
-                          </InArgument>
-                        </If.Condition>
-                        <If.Then>
-                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,221" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Methods\\Dialog_OrderItems.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Methods\\Dialog_OrderItems.xaml">
-                              <ui:InvokeWorkflowFile.Arguments>
-                                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_OrderItems">
-                                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_37">orderItems</CSharpReference>
-                                </OutArgument>
-                              </ui:InvokeWorkflowFile.Arguments>
-                            </ui:InvokeWorkflowFile>
-                          </Sequence>
-                        </If.Then>
-                        <If.Else>
-                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,363" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <Assign DisplayName="Assign Set Ordered False" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:Boolean">
-                                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_40">orderItems</CSharpReference>
-                                </OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                            <ui:LogMessage DisplayName="Log Message RPADev-S07P02-StateMachines.Main.LowFunds;" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info">
-                              <ui:LogMessage.Message>
-                                <InArgument x:TypeArguments="x:Object">
-                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">"RPADev-S07P02-StateMachines.Main.LowFunds; Low funds, ending transaction."</CSharpValue>
-                                </InArgument>
-                              </ui:LogMessage.Message>
-                            </ui:LogMessage>
-                          </Sequence>
-                        </If.Else>
-                      </If>
-                    </Sequence>
+                    </ui:InvokeWorkflowFile>
                   </State.Entry>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">43,229</av:Point>
-                      <av:Size x:Key="ShapeSize">134,62</av:Size>
+                      <av:Point x:Key="ShapeLocation">291.5,256</av:Point>
+                      <av:Size x:Key="ShapeSize">157,68</av:Size>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      <x:Double x:Key="StateContainerWidth">100</x:Double>
-                      <x:Double x:Key="StateContainerHeight">25</x:Double>
+                      <x:Double x:Key="StateContainerWidth">123.3993004645846</x:Double>
+                      <x:Double x:Key="StateContainerHeight">30.999089762003905</x:Double>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <State.Transitions>
-                    <Transition DisplayName="Order Items" sap:VirtualizedContainerService.HintSize="450,488" sap2010:WorkflowViewState.IdRef="Transition_4">
+                    <Transition DisplayName="Order Items True" sap2010:WorkflowViewState.IdRef="Transition_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:PointCollection x:Key="ConnectorLocation">43,260 20,260 20,321 110,321 110,291</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">291.5,290 160,290 160,360.5</av:PointCollection>
                           <x:Int32 x:Key="SrcConnectionPointIndex">37</x:Int32>
-                          <x:Int32 x:Key="DestConnectionPointIndex">39</x:Int32>
+                          <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Transition.To>
-                        <x:Reference>__ReferenceID0</x:Reference>
-                      </Transition.To>
                       <Transition.Condition>
-                        <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">orderItems == true</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">shouldOrderItems == true</CSharpValue>
                       </Transition.Condition>
+                      <Transition.To>
+                        <State x:Name="__ReferenceID3" DisplayName="State Dispense" sap:VirtualizedContainerService.HintSize="166,79" sap2010:WorkflowViewState.IdRef="State_3">
+                          <State.Entry>
+                            <Sequence DisplayName="Sequence Dispense" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Dispense Items" DisplayName="Methods\\Dialog_DispenseItems.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,167" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Dialog\\Dialog_DispenseItems.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Double)" x:Key="in_ItemsAndCosts">
+                                    <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Double)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">itemsAndCosts</CSharpValue>
+                                  </InArgument>
+                                  <InOutArgument x:TypeArguments="x:Double" x:Key="io_CreditAmount">
+                                    <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_35">creditAmount</CSharpReference>
+                                  </InOutArgument>
+                                  <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_OrderedItems">
+                                    <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_42">orderedItems</CSharpReference>
+                                  </InOutArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </State.Entry>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">77,360.5</av:Point>
+                              <av:Size x:Key="ShapeSize">166,79</av:Size>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Double x:Key="StateContainerWidth">131.60470733265606</x:Double>
+                              <x:Double x:Key="StateContainerHeight">41.98485952674923</x:Double>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <State.Transitions>
+                            <Transition DisplayName="Has Dispensed" sap2010:WorkflowViewState.IdRef="Transition_12">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:PointCollection x:Key="ConnectorLocation">160,439.5 160,469.5 161,469.5 161,489.5</av:PointCollection>
+                                  <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                  <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Transition.Condition>
+                                <Literal x:TypeArguments="x:Boolean" DisplayName="Literal" Value="True" />
+                              </Transition.Condition>
+                              <Transition.To>
+                                <State x:Name="__ReferenceID4" DisplayName="State Validate Funds" sap:VirtualizedContainerService.HintSize="164,83" sap2010:WorkflowViewState.IdRef="State_8">
+                                  <State.Entry>
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Validate Credit" DisplayName="Methods\\Validate_CreditAmount.xaml - Invoke Workflow File Order Items" sap:VirtualizedContainerService.HintSize="334,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Methods\\Validate_CreditAmount.xaml">
+                                      <ui:InvokeWorkflowFile.Arguments>
+                                        <InArgument x:TypeArguments="x:Double" x:Key="in_CreditAmount">
+                                          <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">creditAmount</CSharpValue>
+                                        </InArgument>
+                                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsValidCredit">
+                                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_47">isValidCredit</CSharpReference>
+                                        </OutArgument>
+                                      </ui:InvokeWorkflowFile.Arguments>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:InvokeWorkflowFile>
+                                  </State.Entry>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">79,489.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">164,83</av:Size>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      <x:Double x:Key="StateContainerWidth">129.6155751874423</x:Double>
+                                      <x:Double x:Key="StateContainerHeight">45.882801509485375</x:Double>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <State.Transitions>
+                                    <Transition DisplayName="Has Credit Order Items True" sap2010:WorkflowViewState.IdRef="Transition_10">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:PointCollection x:Key="ConnectorLocation">243,531 370,531 370,324</av:PointCollection>
+                                          <x:Int32 x:Key="SrcConnectionPointIndex">36</x:Int32>
+                                          <x:Int32 x:Key="DestConnectionPointIndex">39</x:Int32>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Transition.To>
+                                        <x:Reference>__ReferenceID0</x:Reference>
+                                      </Transition.To>
+                                      <Transition.Condition>
+                                        <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">isValidCredit == true</CSharpValue>
+                                      </Transition.Condition>
+                                    </Transition>
+                                    <Transition DisplayName="Has Credit Order Items False" sap2010:WorkflowViewState.IdRef="Transition_11">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:PointCollection x:Key="ConnectorLocation">79,535.15 49,535.15 49,146.9 303,146.9</av:PointCollection>
+                                          <x:Int32 x:Key="SrcConnectionPointIndex">41</x:Int32>
+                                          <x:Int32 x:Key="DestConnectionPointIndex">33</x:Int32>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Transition.To>
+                                        <x:Reference>__ReferenceID1</x:Reference>
+                                      </Transition.To>
+                                      <Transition.Condition>
+                                        <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56">isValidCredit == false</CSharpValue>
+                                      </Transition.Condition>
+                                    </Transition>
+                                  </State.Transitions>
+                                </State>
+                              </Transition.To>
+                            </Transition>
+                          </State.Transitions>
+                        </State>
+                      </Transition.To>
                     </Transition>
-                    <Transition DisplayName="Cash Out" sap2010:WorkflowViewState.IdRef="Transition_5">
+                    <Transition DisplayName="Order Items False" sap2010:WorkflowViewState.IdRef="Transition_13">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:PointCollection x:Key="ConnectorLocation">177,260 413,260</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">448.5,290 557.4,290 557.4,352.5</av:PointCollection>
                           <x:Int32 x:Key="SrcConnectionPointIndex">36</x:Int32>
-                          <x:Int32 x:Key="DestConnectionPointIndex">37</x:Int32>
+                          <x:Int32 x:Key="DestConnectionPointIndex">22</x:Int32>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <Transition.Condition>
-                        <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">orderItems == false</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">shouldOrderItems == false</CSharpValue>
                       </Transition.Condition>
                       <Transition.To>
-                        <State x:Name="__ReferenceID1" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_6" IsFinal="True">
+                        <State x:Name="__ReferenceID2" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="163,75" sap2010:WorkflowViewState.IdRef="State_6" IsFinal="True">
                           <State.Entry>
-                            <ui:LogMessage DisplayName="Log Message RPADev-S05P04-OutputActions.Dialog_DispenseItems.CashOut;" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info">
+                            <ui:LogMessage DisplayName="Log Message RPADev-S07P02-StateMachines.Dialog_DispenseItems.CashOut;" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info">
                               <ui:LogMessage.Message>
                                 <InArgument x:TypeArguments="x:Object">
-                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47" xml:space="preserve">"RPADev-S05P04-OutputActions.Dialog_DispenseItems.CashOut;" + Environment.NewLine + 
+                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50" xml:space="preserve">"RPADev-S07P02-StateMachines.Dialog_DispenseItems.CashOut;" + Environment.NewLine + 
 "Returning funds in pennies: " + creditAmount.ToString() + Environment.NewLine + 
-"Ordered Items: " + Environment.NewLine + string.Join(Environment.NewLine, orderedItemsTotal)</CSharpValue>
+"Ordered Items: " + Environment.NewLine + string.Join(Environment.NewLine, orderedItems)</CSharpValue>
                                 </InArgument>
                               </ui:LogMessage.Message>
                             </ui:LogMessage>
                           </State.Entry>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">413,229</av:Point>
-                              <av:Size x:Key="ShapeSize">134,62</av:Size>
+                              <av:Point x:Key="ShapeLocation">508.5,352.5</av:Point>
+                              <av:Size x:Key="ShapeSize">163,75</av:Size>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Double x:Key="StateContainerWidth">129.3932211204194</x:Double>
+                              <x:Double x:Key="StateContainerHeight">38.395673262892274</x:Double>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </State>
@@ -406,28 +496,51 @@
                 </State>
               </Transition.To>
             </Transition>
-            <Transition DisplayName="Credit To Cash Out" sap2010:WorkflowViewState.IdRef="Transition_6">
+            <Transition DisplayName="Has Credit False" sap2010:WorkflowViewState.IdRef="Transition_14">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:PointCollection x:Key="ConnectorLocation">367,158.5 480,158.5 480,229</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">437,150 614.45,150 614.45,352.5</av:PointCollection>
                   <x:Int32 x:Key="SrcConnectionPointIndex">36</x:Int32>
-                  <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                  <x:Int32 x:Key="DestConnectionPointIndex">50</x:Int32>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Transition.To>
-                <x:Reference>__ReferenceID1</x:Reference>
+                <x:Reference>__ReferenceID2</x:Reference>
               </Transition.To>
               <Transition.Condition>
-                <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">orderItems == false</CSharpValue>
+                <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">isValidCredit == false</CSharpValue>
               </Transition.Condition>
             </Transition>
           </State.Transitions>
         </State>
+        <x:Reference>__ReferenceID3</x:Reference>
+        <x:Reference>__ReferenceID2</x:Reference>
         <x:Reference>__ReferenceID0</x:Reference>
-        <x:Reference>__ReferenceID1</x:Reference>
+        <x:Reference>__ReferenceID4</x:Reference>
+        <StateMachine.Variables>
+          <Variable x:TypeArguments="x:Boolean" Name="isValidCredit">
+            <Variable.Default>
+              <Literal x:TypeArguments="x:Boolean" />
+            </Variable.Default>
+          </Variable>
+        </StateMachine.Variables>
       </StateMachine>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message RPADev-S07P02-StateMachines.Main.End;" sap:VirtualizedContainerService.HintSize="696,164" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+    <Sequence DisplayName="Sequence Result" sap:VirtualizedContainerService.HintSize="778,284" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message RPADev-S07P02-StateMachines.Main.OperationCompleted;" sap:VirtualizedContainerService.HintSize="388,164" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace">
+        <ui:LogMessage.Message>
+          <InArgument x:TypeArguments="x:Object">
+            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">"RPADev-S07P02-StateMachines.Main.OperationCompleted;"</CSharpValue>
+          </InArgument>
+        </ui:LogMessage.Message>
+      </ui:LogMessage>
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message RPADev-S07P02-StateMachines.Main.End;" sap:VirtualizedContainerService.HintSize="778,164" sap2010:WorkflowViewState.IdRef="LogMessage_2">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
