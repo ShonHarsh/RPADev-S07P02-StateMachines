@@ -37,49 +37,75 @@ If they want to get the change, a message box is displayed with the value of the
 
 ### Sample Output
 
+![Credit](https://raw.githubusercontent.com/ShonHarsh/RPADev-S07P02-StateMachines-VB/main/Data/Images/RPADev-S07P02-StateMachines-VB-Credit.png)
+
+![Order Items](https://raw.githubusercontent.com/ShonHarsh/RPADev-S07P02-StateMachines-VB/main/Data/Images/RPADev-S07P02-StateMachines-VB-OrderItems.png)
+
+![Item Select](https://raw.githubusercontent.com/ShonHarsh/RPADev-S07P02-StateMachines-VB/main/Data/Images/RPADev-S07P02-StateMachines-VB-ItemSelect.png)
+
+![Cash Out](https://raw.githubusercontent.com/ShonHarsh/RPADev-S07P02-StateMachines-VB/main/Data/Images/RPADev-S07P02-StateMachines-VB-CashOut.png)
+
 ```
-05/13/2024 18:44:06 => [Info] RPADev-S07P02-StateMachines execution started
-05/13/2024 18:44:07 => [Info] RPADev-S07P02-StateMachines.Main.Begin;
-05/13/2024 18:44:07 => [Info] RPADev-S07P02-StateMachines.Read_WorkbookToTable.OperationCompleted;
-05/13/2024 18:44:07 => [Info] RPADev-S07P02-StateMachines.Create_VendingItems.OperationCompleted;
-05/13/2024 18:44:10 => [Info] RPADev-S07P02-StateMachines.Dialog_CreditAccount.Credit; Account Credit: 100
-05/13/2024 18:44:16 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+05/15/2024 16:04:20 => [Info] RPADev-S07P02-StateMachines execution started
+05/15/2024 16:04:20 => [Info] RPADev-S07P02-StateMachines.Main.Begin;
+05/15/2024 16:04:28 => [Info] RPADev-S07P02-StateMachines.Dialog_CreditAccount.Credit; Account Credit: 50
+05/15/2024 16:04:33 => [Info] RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
 Item: 7up, Cost: 2
-Credit: 98
-05/13/2024 18:44:21 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
-Item: Barq's, Cost: 2
-Credit: 96
-05/13/2024 18:44:26 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Credit: 48
+05/15/2024 16:04:38 => [Info] RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Barq's Root Beer, Cost: 2
+Credit: 46
+05/15/2024 16:04:42 => [Info] RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
 Item: Cheerwine, Cost: 3
-Credit: 93
-05/13/2024 18:44:30 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Credit: 43
+05/15/2024 16:04:46 => [Info] RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
 Item: Coca-Cola, Cost: 2
-Credit: 91
-05/13/2024 18:44:34 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Credit: 41
+05/15/2024 16:04:56 => [Info] RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
 Item: Dr. Pepper, Cost: 2
-Credit: 89
-05/13/2024 18:44:42 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
-Item: Java Monster, Cost: 4
-Credit: 85
-05/13/2024 18:44:46 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
-Item: Vernors Ginger Ale, Cost: 2
-Credit: 83
-05/13/2024 18:44:49 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Credit: 39
+05/15/2024 16:05:00 => [Info] RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Java Monster Café Latte, Cost: 3
+Credit: 36
+05/15/2024 16:05:05 => [Info] RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Java Monster Irish Crème, Cost: 3
+Credit: 33
+05/15/2024 16:05:11 => [Info] RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Java Monster Loca Moca, Cost: 3
+Credit: 30
+05/15/2024 16:05:16 => [Info] RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Java Monster Mean Bean, Cost: 3
+Credit: 27
+05/15/2024 16:05:24 => [Info] RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Java Monster Triple Shot French Vanilla, Cost: 4
+Credit: 23
+05/15/2024 16:05:29 => [Info] RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Java Monster Triple Shot Mocha, Cost: 4
+Credit: 19
+05/15/2024 16:05:33 => [Info] RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
+Item: Vernors Ginger Ale, Cost: 3
+Credit: 16
+05/15/2024 16:05:37 => [Info] RPADev-S07P02-StateMachines.Dialog_DispenseItems.TransactionCompleted; Transaction Complete.
 Item: Water, Cost: 1
-Credit: 82
-05/13/2024 18:44:50 => [Info] RPADev-S05P04-OutputActions.Dialog_DispenseItems.CashOut;
-Returning funds in pennies: 82
+Credit: 15
+05/15/2024 16:05:38 => [Info] RPADev-S07P02-StateMachines.Dialog_DispenseItems.CashOut;
+Returning funds in pennies: 15
 Ordered Items:
 7up
-Barq's
+Barq's Root Beer
 Cheerwine
 Coca-Cola
 Dr. Pepper
-Java Monster
+Java Monster Café Latte
+Java Monster Irish Crème
+Java Monster Loca Moca
+Java Monster Mean Bean
+Java Monster Triple Shot French Vanilla
+Java Monster Triple Shot Mocha
 Vernors Ginger Ale
 Water
-05/13/2024 18:44:50 => [Info] RPADev-S07P02-StateMachines.Main.End;
-05/13/2024 18:44:50 => [Info] RPADev-S07P02-StateMachines execution ended in: 00:00:43
+05/15/2024 16:05:38 => [Info] RPADev-S07P02-StateMachines.Main.End;
+05/15/2024 16:05:38 => [Info] RPADev-S07P02-StateMachines execution ended in: 00:01:18
 ```
 
 ### Architecture Requirements
@@ -145,7 +171,7 @@ Clone the project to develop or change it.
 
    P03 RPADev-S05P03-InputActions [[C#](https://github.com/ShonHarsh/RPADev-S05P03-InputActions)] [[VB](https://github.com/ShonHarsh/RPADev-S05P03-InputActions-VB)] [[Windows Legacy](https://github.com/ShonHarsh/RPADev-S05P03-InputActions-WindowsLegacy)]
 
-   P04 RPADev-S05P04-OutputActions [[C#](https://github.com/ShonHarsh/RPADev-S05P04-OutputActions)] [[VB](https://github.com/ShonHarsh/RPADev-S05P04-OutputActions-VB)] [[Windows Legacy](https://github.com/ShonHarsh/RPADev-S05P04-OutputActions-WindowsLegacy)]
+   P04 RPADev-S07P02-StateMachines [[C#](https://github.com/ShonHarsh/RPADev-S07P02-StateMachines)] [[VB](https://github.com/ShonHarsh/RPADev-S07P02-StateMachines-VB)] [[Windows Legacy](https://github.com/ShonHarsh/RPADev-S07P02-StateMachines-WindowsLegacy)]
 
    P05 RPADev-S05P05-DataScraping [[C#](https://github.com/ShonHarsh/RPADev-S05P05-DataScraping)] [[VB](https://github.com/ShonHarsh/RPADev-S05P05-DataScraping-VB)] [[Windows Legacy](https://github.com/ShonHarsh/RPADev-S05P05-DataScraping-WindowsLegacy)]
 
