@@ -8,7 +8,7 @@ This project is my solution in **C#** to the **State Machines** practice found i
 
 After making a pull request or downloading the project, open the Main.xaml in UiPath Studio.  The robot can be run with the play button in the ribbon and the result can be seen in output panel.
 
-![Vending](https://github.com/ShonHarsh/RPADev-S07P02-StateMachines/blob/main/Data/Images/RPADev-S07P02-StateMachines-BannerVending)
+![Vending](https://github.com/ShonHarsh/RPADev-S07P02-StateMachines/blob/main/Data/Images/RPADev-S07P02-StateMachines-BannerVending.jpg)
 
 ### Practice Requirements
 
