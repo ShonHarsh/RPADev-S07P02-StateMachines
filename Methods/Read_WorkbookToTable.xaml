@@ -116,7 +116,11 @@
     </ui:LogMessage>
     <Sequence sap2010:Annotation.AnnotationText="This workflow takes a file path as a string, a workrsheet name as a string, a worksheet range as a string and a boolean if headers exist for a Microsoft Excel document, reads the document, and retuns the data in a data table.  The entire sheet will be read if the range is blank.&#xA;&#xA;This process uses the Workbook activities." DisplayName="Sequence Initialization" sap:VirtualizedContainerService.HintSize="512,1158" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
-        <Variable x:TypeArguments="x:Boolean" Name="isValidFilePath" />
+        <Variable x:TypeArguments="x:Boolean" Name="isValidFilePath">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:Boolean" />
+          </Variable.Default>
+        </Variable>
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

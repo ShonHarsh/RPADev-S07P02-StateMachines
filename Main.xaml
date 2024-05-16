@@ -303,12 +303,12 @@
                 <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">isValidCredit == true</CSharpValue>
               </Transition.Condition>
               <Transition.To>
-                <State x:Name="__ReferenceID0" DisplayName="State Order Items" sap:VirtualizedContainerService.HintSize="157,68" sap2010:WorkflowViewState.IdRef="State_7">
+                <State x:Name="__ReferenceID0" DisplayName="State Order Items" sap:VirtualizedContainerService.HintSize="380,532" sap2010:WorkflowViewState.IdRef="State_7">
                   <State.Entry>
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Order Items" DisplayName="Dialog\\Dialog_OrderItems.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Dialog\\Dialog_OrderItems.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_OrderItems">
-                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_46">shouldOrderItems</CSharpReference>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ShouldOrderItems">
+                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_48">shouldOrderItems</CSharpReference>
                         </OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
@@ -386,9 +386,7 @@
                                   <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Transition.Condition>
-                                <Literal x:TypeArguments="x:Boolean" DisplayName="Literal" Value="True" />
-                              </Transition.Condition>
+                              <Transition.Condition>True</Transition.Condition>
                               <Transition.To>
                                 <State x:Name="__ReferenceID4" DisplayName="State Validate Funds" sap:VirtualizedContainerService.HintSize="164,83" sap2010:WorkflowViewState.IdRef="State_8">
                                   <State.Entry>
@@ -518,11 +516,7 @@
         <x:Reference>__ReferenceID0</x:Reference>
         <x:Reference>__ReferenceID4</x:Reference>
         <StateMachine.Variables>
-          <Variable x:TypeArguments="x:Boolean" Name="isValidCredit">
-            <Variable.Default>
-              <Literal x:TypeArguments="x:Boolean" />
-            </Variable.Default>
-          </Variable>
+          <Variable x:TypeArguments="x:Boolean" Default="False" Name="isValidCredit" />
         </StateMachine.Variables>
       </StateMachine>
     </Sequence>

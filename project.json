@@ -41,7 +41,50 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [],
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "4374d823-4e0d-437b-ada4-44a7682ec759",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Test\\Dialog\\Test_Dialog_OrderItems.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "c0a41c6f-7536-44a5-93d6-2e16b660ee05",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Test\\Dialog\\Test_Dialog_DispenseItems.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "c5b58039-ff8a-4aee-b84f-5b9f57ec4727",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Test\\Dialog\\Test_Dialog_CreditAccount.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "ec0eeb71-bcaa-443f-9efe-de919eecf824",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Test\\Methods\\Test_Validate_CreditAmount.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "cc360849-4033-421c-bb44-4dff2406c388",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Test\\Methods\\Test_Read_WorkbookToTable.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "862035cc-f592-4cd6-9c04-90390771815c",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Test\\Methods\\Test_Create_VendingItems.xaml"
+      }
+    ],
     "saveToCloud": false
   },
   "expressionLanguage": "CSharp",
