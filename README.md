@@ -8,7 +8,7 @@ This project is my solution in **C#** to the **State Machines** practice found i
 
 After making a pull request or downloading the project, open the Main.xaml in UiPath Studio.  The robot can be run with the play button in the ribbon and the result can be seen in output panel.
 
-![Vending](https://raw.githubusercontent.com/ShonHarsh/RPADev-S07P02-StateMachines-VB/main/Data/Images/RPADev-S07P02-StateMachines-BannerVending)
+![Vending]https://github.com/ShonHarsh/RPADev-S07P02-StateMachines/blob/main/Data/Images/RPADev-S07P02-StateMachines-BannerVending)
 
 ### Practice Requirements
 
@@ -39,13 +39,13 @@ If they want to get the change, a message box is displayed with the value of the
 
 ### Sample Output
 
-![Credit](https://raw.githubusercontent.com/ShonHarsh/RPADev-S07P02-StateMachines-VB/main/Data/Images/RPADev-S07P02-StateMachines-Credit.png)
+![Credit]https://github.com/ShonHarsh/RPADev-S07P02-StateMachines/blob/main/Data/Images/RPADev-S07P02-StateMachines-Credit.png)
 
-![Order Items](https://raw.githubusercontent.com/ShonHarsh/RPADev-S07P02-StateMachines-VB/main/Data/Images/RPADev-S07P02-StateMachines-OrderItems.png)
+![Order Items]https://github.com/ShonHarsh/RPADev-S07P02-StateMachines/blob/main/Data/Images/RPADev-S07P02-StateMachines-OrderItems.png)
 
-![Item Select](https://raw.githubusercontent.com/ShonHarsh/RPADev-S07P02-StateMachines-VB/main/Data/Images/RPADev-S07P02-StateMachines-ItemSelect.png)
+![Item Select]https://github.com/ShonHarsh/RPADev-S07P02-StateMachines/blob/main/Data/Images/RPADev-S07P02-StateMachines-ItemSelect.png)
 
-![Cash Out](https://raw.githubusercontent.com/ShonHarsh/RPADev-S07P02-StateMachines-VB/main/Data/Images/RPADev-S07P02-StateMachines-CashOut.png)
+![Cash Out]https://github.com/ShonHarsh/RPADev-S07P02-StateMachines/blob/main/Data/Images/RPADev-S07P02-StateMachines-CashOut.png)
 
 ```
 05/15/2024 16:04:20 => [Info] RPADev-S07P02-StateMachines execution started
