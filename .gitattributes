@@ -1,1 +1,8 @@
-*.xaml linguist-language=C#
+# Language
+*.xaml linguist-language=CSharp
+
+# Markdown
+*.md linguist-detectable=true
+*.md linguist-documentation=false
+*.md linguist-generated=false
+*.md linguist-vendored=false
